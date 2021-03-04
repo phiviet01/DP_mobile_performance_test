@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
             val startTime = System.currentTimeMillis()
             val round = 100
             for (i in 0 until round) {
-                getPiByGaussLegendre(10000000)
+                getPIByGaussLegendre(10000000)
             }
             val endTime = System.currentTimeMillis()
             val executionTime = (endTime - startTime) / round
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getPiByGaussLegendre(rounds: Int): Double {
+    private fun getPIByGaussLegendre(rounds: Int): Double {
         var a0 = 1.0
         var b0 = 1.0 / Math.sqrt(2.0)
         var t0 = 1.0 / 4.0
