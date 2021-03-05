@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                     });
                     int startTime = DateTime.now().millisecondsSinceEpoch;
                     print('startTime: $startTime');
-                    const rounds = 1;
+                    const rounds = 100;
                     for (int i = 0; i < rounds; i++) {
                       getPIByGaussLegendre(10000000);
                     }

@@ -10,14 +10,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         startButton.setOnClickListener {
+            println("start")
             val startTime = System.currentTimeMillis()
             val round = 100
             for (i in 0 until round) {
                 getPIByGaussLegendre(10000000)
             }
             val endTime = System.currentTimeMillis()
+            println("end")
             val executionTime = (endTime - startTime) / round
-            tvExecutionTime.text = "$executionTime ms"
+            tvExecutionTime.text = "${executionTime} ms"
         }
     }
 
