@@ -14,12 +14,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   double executionTime = 0.0;
 
-  double getPIByGaussLegendre(int rounds) {
+  double getPIByGaussLegendre(int iterations) {
     double a0 = 1.0;
     double b0 = 1.0 / sqrt(2.0);
     double t0 = 1.0 / 4.0;
     double p0 = 1.0;
-    for (int i = 0; i < rounds; i++) {
+    for (int i = 0; i < iterations; i++) {
       double an = (a0 + b0) / 2;
       double bn = sqrt(a0 * b0);
       double tn = t0 - p0 * pow(a0 - an, 2.0);
@@ -60,13 +60,11 @@ class _MyAppState extends State<MyApp> {
                       executionTime = 0.0;
                     });
                     int startTime = DateTime.now().millisecondsSinceEpoch;
-                    print('startTime: $startTime');
                     const rounds = 100;
                     for (int i = 0; i < rounds; i++) {
                       getPIByGaussLegendre(10000000);
                     }
                     int endTime = DateTime.now().millisecondsSinceEpoch;
-                    print('endTime: $endTime');
                     setState(() {
                       executionTime = (endTime - startTime) / rounds;
                     });
