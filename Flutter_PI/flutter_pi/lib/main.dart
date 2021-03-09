@@ -60,13 +60,10 @@ class _MyAppState extends State<MyApp> {
                       executionTime = 0.0;
                     });
                     int startTime = DateTime.now().millisecondsSinceEpoch;
-                    const rounds = 100;
-                    for (int i = 0; i < rounds; i++) {
-                      getPIByGaussLegendre(10000000);
-                    }
+                    getPIByGaussLegendre(10000000);
                     int endTime = DateTime.now().millisecondsSinceEpoch;
                     setState(() {
-                      executionTime = (endTime - startTime) / rounds;
+                      executionTime = (endTime - startTime).toDouble();
                     });
                   },
                   child: Text('Calculate PI'),
